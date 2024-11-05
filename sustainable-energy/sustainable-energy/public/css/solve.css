@@ -1,0 +1,195 @@
+.container {
+    width: 90%; /* Wider container */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: auto; /* Center the container */
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(64, 224, 208, 0.3), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(12px); /* Glass effect */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 1.5rem; /* Space between cards */
+}
+
+/* Problem card styles */
+.problem-card {
+    background: linear-gradient(135deg, rgba(3, 170, 153, 0.432), rgba(233, 219, 219, 0.548));
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Ensure it takes full width */
+    max-width: 600px; /* Set a max width for better layout */
+    margin: 0 auto; /* Center the card */
+    position: relative; /* Relative positioning for absolute elements */
+}
+.problemstobesolved{
+   font-size: 3.5rem;
+   background: linear-gradient(90deg, #29d1ff, #d2ff0b);
+   -webkit-background-clip: text;
+   color: transparent;
+}
+.problem-title{
+    background: linear-gradient(90deg, #29d1ff, #ffffff);
+    -webkit-background-clip: text;
+    color: transparent;
+  font-size: xx-large;
+}
+.problem-desc {
+    color: #000000; /* Darker text for better readability */
+    font-family: 'Poppins', sans-serif; /* Modern sans-serif font */
+    font-weight: 600; /* Semi-bold for a nice appearance */
+    font-size: 1.2rem; /* Size adjustment */
+    line-height: 1.5; /* Line height for readability */
+   
+}
+.solution-header{
+    background: linear-gradient(90deg, #ff4e4e, #000000);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: x-large;
+}
+.each-solution{
+    background: linear-gradient(90deg, #d9ff00, #ffae01);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Delete button styles */
+.delete-form {
+    position: absolute; /* Position it relative to the card */
+    top: 10px; /* 10px from the top */
+    right: 10px; /* 10px from the right */
+}
+
+.delete-btn {
+    background: transparent; /* Transparent background */
+    color: #e74c3c; /* Red color */
+    font-size: 24px; /* Larger font size for visibility */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s; /* Smooth transitions */
+}
+
+.delete-btn:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Cross button styles */
+.cross-form {
+    display: inline; /* Inline to position next to solution text */
+}
+
+.cross-btn {
+    background-color: transparent; /* Transparent background */
+    color: #e74c3c; /* Red color for cross button */
+    font-size: 24px; /* Font size */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s; /* Smooth transitions */
+    margin-left: 10px; /* Space between text and button */
+
+}
+
+.cross-btn:hover {
+    transform: scale(2);
+    /* Slightly enlarge on hover */
+}
+
+/* Vote section styles */
+.vote-section {
+    display: flex; /* Align buttons horizontally */
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 1rem; /* Space above the vote section */
+}
+
+.vote-btn {
+    padding: 0.5rem 1rem; /* Padding for vote buttons */
+    background: linear-gradient(45deg, #1e90ff, #f39c12); /* Gradient for buttons */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease; /* Smooth transition */
+    margin-right: 1rem; /* Spacing between buttons */
+}
+
+.vote-btn:hover {
+    background: linear-gradient(45deg, #c1af08, #4761d3); /* Darker gradient on hover */
+    color: #000; /* Black text on hover */
+}
+
+/* Textarea styles */
+textarea {
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Padding for textarea */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    color: #fff; /* White text */
+    margin-top: 1rem; /* Space above the textarea */
+    resize: none; /* Disable resizing */
+}
+
+textarea:focus {
+    outline: none; /* Remove default outline */
+}
+
+/* Submit button styles */
+.submit-btn {
+    width: 100%; /* Full width for submit button */
+    padding: 1rem; /* Padding */
+    background: linear-gradient(45deg, #1e90ff, #f39c12); /* Gradient for button */
+    color: #fff; /* White text */
+    font-size: 1.1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    border: none; /* No border */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition */
+    margin-top: 1rem; /* Space above the button */
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, #c1af08, #4761d3); /* Darker gradient on hover */
+    color: #000; /* Black text on hover */
+}
+
+/* Styles for the solutions section */
+.solutions {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.solution-card {
+    background: rgba(255, 255, 255, 0.2); /* Slightly lighter background */
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0; /* Space between solutions */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem; /* Reduced padding for mobile */
+    }
+
+    .problem-card {
+        padding: 1rem; /* Reduced padding for cards */
+    }
+
+    .vote-btn,
+    .submit-btn {
+        padding: 0.7rem; /* Reduced padding for buttons */
+    }
+
+    textarea {
+        padding: 0.4rem; /* Reduced padding for textarea */
+    }
+}

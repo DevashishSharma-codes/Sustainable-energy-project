@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="img-src * data:;"> -->
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: *;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Sustainable Energy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/blogs.css"> <!-- Ensure this path is correct -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="circle large-circle"></div>
+        <div class="circle large-circle-2"></div>
+        <div class="hexagon"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <header>
+        <div class="logo">Sustainable Energy</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blogs">Blogs</a></li>
+                <li><a href="/share">Share</a></li>
+                <li><a href="/solve">Solve</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cards-container" id="cards-container">
+            <% articles.forEach(article => { %>
+                <div class="card">
+                    <img src="<%= article.urlToImage %>" alt="news-image" class="cardHeader">
+                    <div class="card-content">
+                        <h3><%= article.title %></h3>
+                        <h6 class="news-source"><%= article.source.name %> <%= new Date(article.publishedAt).toLocaleDateString() %></h6>
+                        <p class="news-desc"><%= article.description %></p>
+                        <!-- Anchor tag to see full post -->
+                        <a href="<%= article.url %>" class="see-full-post">See Full Post</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Sustainable Energy Project. All rights reserved.</p>
+    </footer>
+
+   
+</body>
+</html>

@@ -1,0 +1,266 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d1117;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed to flex-start for proper layout */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Abstract Shapes */
+.background-shapes {
+    position: fixed; /* Changed to fixed to ensure it stays in place while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Circle Styles */
+.circle {
+    position: absolute;
+    background: linear-gradient(45deg, #ff6b6b, #1e90ff);
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+}
+
+/* Large Circles */
+.large-circle {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: -150px;
+    animation: move-circle 5s infinite ease-in-out;
+}
+
+.large-circle-2 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    right: -150px;
+    animation: move-circle 6s infinite ease-in-out;
+}
+
+/* Keyframes for Movement */
+@keyframes move-circle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(30px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hexagon Styles */
+.hexagon {
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    top: 5%;
+    right: -150px;
+    animation: rotate-hexagon 6s infinite linear;
+    background: linear-gradient(45deg, #ffcc00, #f39c12);
+}
+
+@keyframes rotate-hexagon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Triangle Styles */
+.triangle {
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    bottom: 15%;
+    left: -150px;
+    animation: move-triangle 5s infinite ease-in-out;
+    background: linear-gradient(45deg, #ff5733, #1e90ff);
+}
+
+@keyframes move-triangle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(25px); }
+    100% { transform: translateY(0); }
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00C9FF, #92FE9D);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Cool Header Styles */
+header {
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Position it at the top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px); /* Blur effect behind the header */
+    z-index: 10; /* Ensure it stays on top of other content */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    background-color: #2c3e50;
+    transition: all 0.4s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f39c12;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to start */
+    padding: 2rem;
+    z-index: 2;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.container {
+    background: linear-gradient(135deg, rgba(64, 224, 208, 0.3), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(12px); /* Glass effect */
+    padding: 3.5rem; /* Slightly increased padding */
+    border-radius: 20px; /* Rounded corners */
+    max-width: 700px; /* Maximum width remains the same */
+    width: 100%; /* Full width on smaller screens */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow for contrast */
+    margin: 2rem auto; /* Center the container */
+}
+
+/* Heading Styles */
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(50deg, #e5da04, #2276cf); /* Gradient for "Share Your" */
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h1 span {
+    background: linear-gradient(45deg, #ffcc00, #f39c12); /* Gradient for "Thoughts" */
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #f5f5f5;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    color: #fff;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #1e90ff;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #1e90ff, #f39c12);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, #c1af08, #4761d3);
+    color: #000;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem; /* Reduced padding for mobile */
+    }
+
+    .problem-card {
+        padding: 1rem; /* Reduced padding for cards */
+    }
+
+    .vote-btn,
+    .submit-btn {
+        padding: 0.7rem; /* Reduced padding for buttons */
+    }
+
+    textarea {
+        padding: 0.4rem; /* Reduced padding for textarea */
+    }
+}

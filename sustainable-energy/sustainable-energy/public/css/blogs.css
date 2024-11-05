@@ -1,0 +1,65 @@
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.cards-container {
+    display: flex;                   /* Use flexbox for the layout */
+    justify-content: space-between; /* Space between items */
+    flex-wrap: wrap;               /* Allow wrapping of items */
+    row-gap: 20px;                 /* Space between rows */
+}
+
+.card {
+    width: calc(33.33% - 20px);    /* 3 cards per row with space */
+    min-height: 400px;
+
+    border-radius: 4px;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(3, 170, 153, 0.432), rgba(233, 219, 219, 0.548));
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;           /* Space between rows */
+}
+
+.card:hover {
+   
+    background-color: #3009f0;
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+    color: #fff;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+.news-desc {
+    color: rgb(0, 0, 0);
+    font-size: larger;
+}
+
+/* Styles for the anchor button */
+.see-full-post {
+    display: inline-block;
+    padding: 10px 15px;               /* Padding for the button */
+    margin-top: 15px;                 /* Space above the button */
+    background-color: #3009f0;        /* Button background color */
+    color: #fff;                      /* Text color */
+    text-decoration: none;             /* Remove underline */
+    border-radius: 4px;               /* Rounded corners */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.see-full-post:hover {
+    background-color: #1f007f; /* Darker shade on hover */
+}

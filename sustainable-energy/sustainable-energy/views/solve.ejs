@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Problems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/solve.css"> <!-- Link to the solve specific CSS -->
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="circle large-circle"></div>
+        <div class="circle large-circle-2"></div>
+        <div class="hexagon"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <header>
+        <div class="logo">Sustainable Energy</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/blogs">Blogs</a></li>
+                <li><a href="/share">Share</a></li>
+                <li><a href="/solve">Solve</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1 class="problemstobesolved">Problems to Solve</h1>
+        <% problems.forEach(problem => { %>
+            <div class="problem-card" id="problem-<%= problem._id %>">
+                <!-- Delete button for deletion -->
+                <form action="/problems/<%= problem._id %>?_method=DELETE" method="POST" class="delete-form">
+                  <button class="delete-btn" aria-label="Delete Problem">&times;</button>
+                </form>
+                <h2 class="problem-title"><%= problem.title %></h2>
+                <p class="problem-desc"><%= problem.description %></p>
+                <div class="vote-section">
+                    <button class="vote-btn">Upvote (<%= problem.upvotes %>)</button>
+                    <button class="vote-btn">Downvote (<%= problem.downvotes %>)</button>
+                </div>
+    
+                <div class="solutions">
+                    <h3 class="solution-header">Solutions:</h3>
+                    <% problem.solutions.forEach(solution => { %>
+                        <div class="solution-card">
+                            <p class="each-solution"><%= solution.text %></p>
+                            <!-- Cross button for deletion -->
+                            <form action="/problems/<%= problem._id %>/solutions/<%= solution._id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" class="delete-btn" title="Delete Solution">✖</button>
+                            </form>
+                        </div>
+                    <% }) %>
+                </div>
+                <!-- Solution Submission Form -->
+                <form action="/problems/<%= problem._id %>/solutions" method="POST">
+                    <textarea class="solutionform" name="solution" placeholder="Your solution..." required></textarea>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+    
+    
+    
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sustainable Energy Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
